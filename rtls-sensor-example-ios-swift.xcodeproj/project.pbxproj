@@ -13,6 +13,8 @@
 		9A4F95DD27EDA65C00BB8354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F95DB27EDA65C00BB8354 /* Main.storyboard */; };
 		9A4F95DF27EDA65C00BB8354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F95DE27EDA65C00BB8354 /* Assets.xcassets */; };
 		9A4F95E227EDA65C00BB8354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4F95E027EDA65C00BB8354 /* LaunchScreen.storyboard */; };
+		9A4F95EA27EDA74000BB8354 /* Ble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F95E927EDA74000BB8354 /* Ble.swift */; };
+		9A4F95F727EDC2B900BB8354 /* libsensor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4F95F627EDC2B900BB8354 /* libsensor.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		9A4F95DE27EDA65C00BB8354 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A4F95E127EDA65C00BB8354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A4F95E327EDA65C00BB8354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4F95E927EDA74000BB8354 /* Ble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ble.swift; sourceTree = "<group>"; };
+		9A4F95ED27EDABF200BB8354 /* rtls-sensor-example-ios-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rtls-sensor-example-ios-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A4F95F627EDC2B900BB8354 /* libsensor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsensor.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4F95F727EDC2B900BB8354 /* libsensor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,11 +64,14 @@
 			children = (
 				9A4F95D527EDA65C00BB8354 /* AppDelegate.swift */,
 				9A4F95D727EDA65C00BB8354 /* SceneDelegate.swift */,
+				9A4F95E927EDA74000BB8354 /* Ble.swift */,
+				9A4F95F627EDC2B900BB8354 /* libsensor.a */,
 				9A4F95D927EDA65C00BB8354 /* ViewController.swift */,
 				9A4F95DB27EDA65C00BB8354 /* Main.storyboard */,
 				9A4F95DE27EDA65C00BB8354 /* Assets.xcassets */,
 				9A4F95E027EDA65C00BB8354 /* LaunchScreen.storyboard */,
 				9A4F95E327EDA65C00BB8354 /* Info.plist */,
+				9A4F95ED27EDABF200BB8354 /* rtls-sensor-example-ios-swift-Bridging-Header.h */,
 			);
 			path = "rtls-sensor-example-ios-swift";
 			sourceTree = "<group>";
@@ -99,6 +108,7 @@
 				TargetAttributes = {
 					9A4F95D127EDA65C00BB8354 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -141,6 +151,7 @@
 				9A4F95DA27EDA65C00BB8354 /* ViewController.swift in Sources */,
 				9A4F95D627EDA65C00BB8354 /* AppDelegate.swift in Sources */,
 				9A4F95D827EDA65C00BB8354 /* SceneDelegate.swift in Sources */,
+				9A4F95EA27EDA74000BB8354 /* Ble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,24 +298,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 684T268A8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "rtls-sensor-example-ios-swift/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rtls-sensor-example-ios-swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coreaiot.rtls-sensor-example-ios-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rtls-sensor-example-ios-swift/rtls-sensor-example-ios-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,24 +335,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 684T268A8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "rtls-sensor-example-ios-swift/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rtls-sensor-example-ios-swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coreaiot.rtls-sensor-example-ios-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "rtls-sensor-example-ios-swift/rtls-sensor-example-ios-swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
